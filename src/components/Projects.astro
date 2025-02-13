@@ -1,0 +1,220 @@
+---
+const projects = [
+  {
+    title: "Manual Testing Documentation",
+    description:
+      "Comprehensive collection of manual testing documentation including test cases, test scenarios, and bug reports. Created detailed test documentation following industry best practices.",
+    tags: ["Manual Testing", "Test Documentation", "Test Cases", "Bug Reports"],
+    type: "QA Project",
+    image: "/project1.jpg",
+    links: {
+      github: "https://github.com/angelitapanjaitan/Website-Admin-PATAR-2.0",
+    },
+  },
+  {
+    title: "Website Admin PATAR 2.0",
+    description:
+      "Developed an admin panel for managing the PATAR website, featuring user management, content moderation, and analytics.",
+    tags: ["Admin Panel", "Web Development", "User Management", "Analytics"],
+    type: "Development Project",
+    image: "/project2.jpg",
+    links: {
+      github: "https://github.com/angelitapanjaitan/Website-Admin-PATAR-2.0",
+    },
+  },
+  {
+    title: "Analyzing Customer Behavior in E-commerce",
+    description:
+      "Conducted analysis of customer behavior in an e-commerce platform. Created visualizations to understand purchasing patterns and customer segmentation.",
+    tags: [
+      "SQL",
+      "Python",
+      "Data Analysis",
+      "Customer Analytics",
+      "Data Visualization",
+    ],
+    type: "Data Analysis",
+    image: "/project3.jpg",
+    links: {
+      tableau:
+        "https://public.tableau.com/app/profile/angelita.panjaitan/viz/12S20037_VisualisasiDataNorthwindFactSales/NorthwindSalesDashboard",
+    },
+  },
+  {
+    title: "Sales Performance Dashboard",
+    description:
+      "Developed an interactive sales performance dashboard using Tableau. Analyzed sales trends, product performance, and regional variations. Created reports to track KPIs.",
+    tags: [
+      "Tableau",
+      "Data Visualization",
+      "Sales Analytics",
+      "Dashboard Design",
+    ],
+    type: "Data Analysis",
+    image: "/project4.jpg",
+    links: {
+      tableau:
+        "https://public.tableau.com/app/profile/angelita.panjaitan/viz/sales-performance-dashboard",
+    },
+  },
+  {
+    title: "Data Mart-based Dashboard for Kickstarter Dataset",
+    description:
+      "Developed a dashboard to visualize Kickstarter project data, allowing users to analyze funding trends and project success rates.",
+    tags: ["Data Visualization", "Dashboard", "Kickstarter", "Data Analysis"],
+    type: "Data Analysis",
+    image: "/project5.jpg",
+    links: {
+      github:
+        "https://github.com/angelitapanjaitan/Data_Mart-based_Dashboard_for_Kickstarter_Dataset",
+    },
+  },
+  {
+    title: "Project Campaign Dashboard",
+    description:
+      "Developed a dashboard to visualize project campaign data, providing insights into campaign performance and donor engagement.",
+    tags: ["Tableau", "Dashboard", "Data Visualization", "Campaign Analysis"],
+    type: "Data Analysis",
+    image: "/project6.jpg",
+    links: {
+      tableau:
+        "https://public.tableau.com/app/profile/angelita.panjaitan/viz/DashboardProjectCampaign_Group4/ProjectCampaign",
+    },
+  },
+];
+
+const projectTypes = {
+  "QA Project": {
+    icon: "",
+    gradientFrom: "primary-100",
+    gradientTo: "secondary-100",
+    textColor: "primary-700",
+  },
+  "Development Project": {
+    icon: "",
+    gradientFrom: "green-100",
+    gradientTo: "emerald-100",
+    textColor: "emerald-700",
+  },
+  "Data Analysis": {
+    icon: "",
+    gradientFrom: "blue-100",
+    gradientTo: "indigo-100",
+    textColor: "blue-700",
+  },
+};
+---
+
+<section
+  id="projects"
+  class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 relative overflow-hidden"
+>
+  <div
+    class="absolute inset-0 bg-gradient-to-tr from-primary-50 to-secondary-50 opacity-30"
+  >
+  </div>
+  <div class="max-w-6xl mx-auto relative">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Featured Projects
+      </h2>
+      <div
+        class="w-20 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto"
+      >
+      </div>
+      <p class="mt-6 text-lg text-gray-600">
+        A collection of my professional work in Quality Assurance, Software
+        Development, and Data Analysis
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        projects.map((project, index) => (
+          <div
+            class="group bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300"
+            style={`animation: slideUp 0.5s ease-out ${index * 0.1}s both`}
+          >
+            <div class="relative h-48 bg-gradient-to-br from-primary-400 to-secondary-400 overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center text-white text-5xl opacity-20 group-hover:opacity-30 transition-opacity duration-300">
+                {projectTypes[project.type].icon}
+              </div>
+              {project.links && (
+                <div class="absolute top-4 right-4 flex gap-2">
+                  {project.links.github && (
+                    <a
+                      href={project.links.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="p-2 bg-white/90 rounded-full hover:bg-white transform hover:scale-110 transition-all duration-300"
+                      title="View on GitHub"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                      </svg>
+                    </a>
+                  )}
+                  {project.links.tableau && (
+                    <a
+                      href={project.links.tableau}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="p-2 bg-white/90 rounded-full hover:bg-white transform hover:scale-110 transition-all duration-300"
+                      title="View on Tableau Public"
+                    >
+                      <span class="text-xl">📊</span>
+                    </a>
+                  )}
+                </div>
+              )}
+            </div>
+            <div class="p-6">
+              <div class="flex items-center mb-3">
+                <span
+                  class={`text-sm font-semibold px-3 py-1 rounded-full 
+                    bg-gradient-to-r from-${projectTypes[project.type].gradientFrom} 
+                    to-${projectTypes[project.type].gradientTo} 
+                    text-${projectTypes[project.type].textColor}`}
+                >
+                  {project.type}
+                </span>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors duration-300">
+                <a href={project.links.github || project.links.tableau} target="_blank" rel="noopener noreferrer">
+                  {project.title}
+                </a>
+              </h3>
+              <p class="text-gray-600 mb-4 line-clamp-3">
+                {project.description}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

@@ -1,0 +1,141 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section id="about" class="relative min-h-screen flex items-center justify-center py-16 px-4 overflow-hidden">
+  <!-- Animated background elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-20 left-10 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+    <div class="absolute top-40 right-10 w-72 h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+    <div class="absolute -bottom-8 left-20 w-56 h-56 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="animate-fade-in order-2 md:order-1">
+        <div class="space-y-6">
+          <div class="inline-block">
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-semibold bg-gradient-to-r from-primary-100 to-secondary-100 text-primary-800">
+              <span class="animate-pulse mr-2">👋</span> Welcome to my portfolio
+            </span>
+          </div>
+          
+          <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+            <div class="overflow-hidden">
+              <span class="block transform transition-transform hover:translate-y-[-2px] duration-300">
+                <span class="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                  Software Quality Assurance
+                </span>
+              </span>
+            </div>
+            <div class="overflow-hidden">
+              <span class="block transform transition-transform hover:translate-y-[-2px] duration-300 delay-100">
+                <span class="bg-gradient-to-r from-secondary-600 to-primary-600 bg-clip-text text-transparent">
+                  Enthusiast
+                </span>
+              </span>
+            </div>
+          </h1>
+
+          <p class="text-xl text-gray-600 leading-relaxed animate-fade-in-up">
+            Hi! I'm <span class="font-semibold text-primary-600">Angelita Dumaria Panjaitan</span>, a Software QA Engineer Enthusiast with a strong foundation in both manual and automated testing. 
+            A graduate of Institut Teknologi Del with experience in ensuring software quality through comprehensive testing methodologies. 
+            I specialize in manual testing, API testing, and performance testing, with a keen eye for detail and a commitment to delivering high-quality software products.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up pt-6">
+            <a
+              href="#contact"
+              class="group inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
+            >
+              Get in Touch
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a
+              href="#projects"
+              class="group inline-flex items-center justify-center px-8 py-3 border-2 border-primary-600 text-base font-medium rounded-full text-primary-600 bg-transparent hover:bg-primary-50 transform hover:scale-105 transition-all duration-300"
+            >
+              View Projects
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative order-1 md:order-2 animate-fade-in">
+        <div class="relative">
+          <!-- Decorative elements -->
+          <div class="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-br from-primary-200 to-secondary-200 rounded-full opacity-30 blur-2xl animate-pulse"></div>
+          <div class="absolute -bottom-8 -left-8 w-72 h-72 bg-gradient-to-br from-secondary-200 to-primary-200 rounded-full opacity-30 blur-2xl animate-pulse delay-1000"></div>
+          
+          <!-- Profile image container -->
+          <div class="relative w-72 h-72 mx-auto">
+            <div class="aspect-square overflow-hidden rounded-full border-2 border-white shadow-xl transform hover:rotate-1 transition-transform duration-300">
+              <img
+                src="/profile.jpg"
+                alt="Angelita Dumaria Panjaitan"
+                class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            
+            <!-- Floating badges -->
+            <div class="absolute -right-4 top-4 bg-white rounded-full p-3 shadow-lg transform hover:scale-110 transition-transform duration-300">
+              <span class="text-2xl">👩‍💻</span>
+            </div>
+            <div class="absolute -left-4 bottom-4 bg-white rounded-full p-3 shadow-lg transform hover:scale-110 transition-transform duration-300">
+              <span class="text-2xl">🎯</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+  
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+</style>

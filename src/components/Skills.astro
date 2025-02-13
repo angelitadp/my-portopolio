@@ -1,0 +1,76 @@
+---
+const skills = [
+  {
+    category: "Quality Assurance",
+    icon: "🎯",
+    items: ["Manual Testing", "Automation Testing", "Test Case Design", "Test Documentation", "Bug Reporting", "API Testing", "Performance Testing"]
+  },
+  {
+    category: "Programming",
+    icon: "💻",
+    items: ["Python", "JavaScript", "HTML", "CSS","Astro", "PHP", "SQL"]
+  },
+  {
+    category: "Tools & Frameworks",
+    icon: "🛠️",
+    items: ["Selenium", "Postman", "Git", "Laravel", "MySQL"]
+  },
+  {
+    category: "Data Analysis",
+    icon: "📊",
+    items: ["SQL", "Tableau", "PowerBI", "Excel", "Data Visualization"]
+  },
+  {
+    category: "Soft Skills",
+    icon: "🤝",
+    items: ["Problem Solving", "Team Collaboration", "Communication", "Time Management", "Critical Thinking", "Fast Learner"]
+  }
+];
+---
+
+<section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-50 opacity-50"></div>
+  <div class="max-w-6xl mx-auto relative">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
+      <div class="w-20 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {skills.map((skillSet, index) => (
+        <div 
+          class="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+          style={`animation: slideUp 0.5s ease-out ${index * 0.1}s both`}
+        >
+          <div class="flex items-center mb-6">
+            <span class="text-4xl mr-4">{skillSet.icon}</span>
+            <h3 class="text-2xl font-semibold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+              {skillSet.category}
+            </h3>
+          </div>
+          <ul class="space-y-3">
+            {skillSet.items.map((skill) => (
+              <li class="flex items-center">
+                <span class="w-2 h-2 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 mr-3"></span>
+                <span class="text-gray-700">{skill}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

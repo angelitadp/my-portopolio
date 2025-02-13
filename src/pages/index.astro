@@ -1,11 +1,47 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageMetadata = {
+  title: "Angelita Dumaria Panjaitan - QA Engineer & Data Analyst",
+  description: "Professional portfolio showcasing expertise in Quality Assurance, Test Automation, and Data Analysis",
+  keywords: "QA Engineer, Test Automation, Data Analysis, Cypress, Selenium, Tableau, SQL"
+};
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+  title={pageMetadata.title}
+  description={pageMetadata.description}
+  keywords={pageMetadata.keywords}
+>
+  <Header />
+  <main class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 space-y-16 md:space-y-24">
+      <Hero />
+      <div class="border-t border-gray-200 dark:border-gray-700 my-8"></div>
+      <Skills />
+      <div class="border-t border-gray-200 dark:border-gray-700 my-8"></div>
+      <Projects />
+      <div class="border-t border-gray-200 dark:border-gray-700 my-8"></div>
+      <Contact />
+    </div>
+  </main>
 </Layout>
+
+<style>
+  /* Global smooth scroll and selection styles */
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: theme('colors.primary.200');
+    color: theme('colors.primary.800');
+  }
+</style>

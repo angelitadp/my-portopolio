@@ -1,0 +1,173 @@
+---
+const contactMethods = [
+  {
+    name: "Email",
+    value: "angelita.djait@gmail.com",
+    icon: "📧",
+    href: "mailto:angelita.djait@gmail.com",
+  },
+  {
+    name: "LinkedIn",
+    value: "Angelita Dumaria Panjaitan",
+    icon: "💼",
+    href: "https://www.linkedin.com/in/angelita-dumaria-panjaitan-580ab7218/",
+  },
+  {
+    name: "GitHub",
+    value: "angelitapanjaitan",
+    icon: "💻",
+    href: "https://github.com/angelitapanjaitan",
+  },
+  {
+    name: "Tableau Public",
+    value: "Angelita Panjaitan",
+    icon: "📊",
+    href: "https://public.tableau.com/app/profile/angelita.panjaitan/vizzes",
+  },
+  {
+    name: "Location",
+    value: "Pancoran, South Jakarta, Indonesia",
+    icon: "📍",
+    href: "#",
+  },
+  {
+    name: "My Quality Assurance CV",
+    value: "",
+    icon: "📄",
+    href: "src/components/CV_QA_Angelita_Dumaria_Panjaitan.pdf",
+  },
+  {
+    name: "My Data Analysis CV",
+    value: "",
+    icon: "📄",
+    href: "src/components/CV_Angelita_Dumaria_Panjaitan.pdf",
+  }
+];
+---
+
+<section
+  id="contact"
+  class="py-20 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden"
+>
+  <div class="absolute inset-0">
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-50 opacity-50"
+    >
+    </div>
+    <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+    <!-- Animated circles -->
+    <div
+      class="absolute top-20 left-10 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"
+    >
+    </div>
+    <div
+      class="absolute top-40 right-10 w-72 h-72 bg-secondary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"
+    >
+    </div>
+  </div>
+
+  <div class="max-w-4xl mx-auto relative">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Get in Touch
+      </h2>
+      <div
+        class="w-20 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto mb-8"
+      >
+      </div>
+      <p class="text-xl text-gray-600 animate-fade-in">
+        I'm currently open to new opportunities in Software Quality Assurance
+        and Data Analyst.
+      </p>
+      <p class="text-xl text-gray-600 animate-fade-in">
+        Feel free to reach out if you'd like to discuss potential
+        collaborations.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      {
+        contactMethods.map((method, index) => (
+          <a
+            href={method.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
+            style={`animation: slideUp 0.5s ease-out ${index * 0.1}s both`}
+          >
+            <div class="flex flex-col items-center text-center">
+              <span class="text-4xl mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                {method.icon}
+              </span>
+              <h3 class="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors duration-300">
+                {method.name}
+              </h3>
+              <p class="text-gray-600 text-sm group-hover:text-gray-900 transition-colors duration-300">
+                {method.value}
+              </p>
+            </div>
+            {method.href !== "#" && (
+              <div class="mt-4 flex justify-center">
+                <span class="text-primary-600 text-sm opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-300">
+                  Visit →
+                </span>
+              </div>
+            )}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="text-center animate-fade-in" style="animation-delay: 0.3s;">
+      <p class="text-gray-600 mb-8">Looking forward to connecting with you!</p>
+      <div class="inline-flex items-center justify-center">
+        <span class="animate-bounce-slow text-2xl">👋</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle, #6366f1 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+</style>
